@@ -4,7 +4,14 @@
 
 
 /* -------------topBanner---------- */
-.topBanner {
+.top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.top .banner {
     /* position: fixed;
     top: 0;
     left: 0;
@@ -14,43 +21,43 @@
     z-index: 999;
 }
 
-.topBanner.on {
+.top .banner.on {
     height: 0;
     padding: 0 0;
     overflow: hidden;
 }
 
-.topBanner .inner {
+.top .banner .inner {
     position: relative;
     width: 1200px;
     margin: 0 auto;
 }
 
-.topBanner .inner .textSlide {
+.top .banner .inner .textSlide {
     text-align: center;
     padding: 20px 0;
 }
 
-.topBanner h2 {
+.top .banner h2 {
     font-size: 20px;
     margin: 0 0 20px 0;
 }
 
-.topBanner i {
+.top .banner i {
     position: absolute;
     bottom: 0;
     right: 0;
     font-size: 20px;
 }
 
-.topBanner .slick-dots {
+.top .banner .slick-dots {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.topBanner .slick-dots>li {
+.top .banner .slick-dots>li {
     display: inline-block;
     position: relative;
     width: 12px;
@@ -60,7 +67,7 @@
     opacity: 1;
 }
 
-.topBanner .slick-dots>li::before {
+.top .banner .slick-dots>li::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,23 +81,18 @@
     content: '';
 }
 
-.topBanner .slick-dots>li.slick-active {
+.top .banner .slick-dots>li.slick-active {
     border: 1px solid #444;
     border-radius: 50%;
 }
 
-.topBanner .slick-dots>li button {
+.top .banner .slick-dots>li button {
     display: none;
 }
 
 /* -------------header---------- */
-.header {
-    /* background: rgba(0, 0, 0, 0.5); */
+.header .inner {
     line-height: 60px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 999;
 }
 
 .header img {
@@ -103,67 +105,362 @@
     margin: 0 auto;
     justify-content: space-between;
     color: #fff;
+
 }
 
 .header .gnb>ul {
     display: flex;
     gap: 60px;
+
 }
 
 .header .gnb>ul>li {
     position: relative;
+}
+
+.header .gnb>ul>li>a {
     font-size: 20px;
+    font-weight: 500;
 }
 
 .header .gnb>ul>li>ul {
     position: absolute;
-    text-align: center;
     top: 60px;
     left: 50%;
     transform: translate(-50%, 0);
-    line-height: 30px;
-    font-size: 15px;
+    background: #444;
+    border: 3px solid #fff;
+    border-radius: 10px;
     width: 140px;
-    color: #fff;
-    z-index: 999;
-    height: 0;
-    transition: 0.5s;
-    overflow: hidden;
+    display: none;
+    text-align: center;
+    line-height: 35px;
 }
 
-.header .gnb>ul:hover>li>ul {
-    height: 170px;
-}
 
-.header .gnb>ul::before {
+.header .gnb>ul>li>ul::before {
     content: "";
     position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    z-index: 999;
-    height: 0;
-    transition: 0.5s;
+    top: -13px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background: #444;
+    border: 3px solid #fff;
+
 }
 
-.header .gnb>ul:hover::before {
-    height: 160px;
+.header .gnb>ul>li:hover>ul {
+    display: block;
+}
+
+.header .gnb>ul>li>ul>li {
+    position: relative;
+    background: #444;
+    border-radius: 10px;
 }
 
 .header .right {
     font-size: 40px;
 }
 
+.header.on {
+    background: rgb(0, 0, 0, 0.5);
+}
+
 /* -------------main----------- */
 
-/* -------------mainSlide----------- */
+/* -------------mainVisual----------- */
+.mainVisual img {
+    width: 100%;
+}
 
 .mainSlide {
     position: relative;
+    margin: 0 0 100px 0;
 }
 
-.mainSlide .textbox {
+.mainSlide figure {
+    position: relative;
+}
+
+.mainSlide figure .textbox {
     position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.mainSlide .textbox h2 {
+    font-size: 90px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.mainSlide .textbox p {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.mainSlide .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.mainSlide .slick-dots>li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: rgba(124, 124, 124, 0.5);
+    margin: 0 2px;
+    border-radius: 50%;
+}
+
+.mainSlide .slick-dots>li.slick-active {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.mainSlide .slick-dots>li button {
+    display: none;
+}
+
+/* -------------mainContent----------- */
+.mainContent {
+    position: relative;
+    text-align: center;
+    margin: 0 0 200px 0;
+}
+
+.mainContent h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0 0 50px 0;
+}
+
+.mainContent .inner {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.mainContent .content_slide .img_box {
+    padding: 30px;
+}
+
+.mainContent .content_slide img {
+    width: 100%;
+}
+
+.mainContent .content_slide strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.mainContent .content_slide p {
+    display: block;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+}
+
+.mainContent .content_slide a {
+    display: inline-block;
+    outline: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+}
+
+.mainContent .content_slide a:hover {
+    background: #ddd;
+}
+
+.mainContent .arrows a {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    font-size: 0;
+}
+
+.mainContent .arrows .prev {
+    background: url(../img/left.png);
+    margin: 0 0 0 430px;
+}
+
+.mainContent .arrows .next {
+    background: url(../img/right.png);
+    margin: 0 0 0 530px;
+}
+
+
+
+/* -------------projectResult----------- */
+.projectResult {
+    position: relative;
+    border-top: 3px dashed #ddd;
+    margin: 0 0 200px 0;
+    height: 100px;
+}
+
+.projectResult .inner {
+    position: absolute;
+    width: 1200px;
+    top: -40%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+
+}
+
+.projectResult ul {
+    display: flex;
+}
+
+.projectResult ul>li {
+    width: 25%;
+    text-align: center;
+    color: #202020;
+}
+
+.projectResult ul>li img {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+}
+
+.projectResult ul>li p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.projectResult ul>li span {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+/* -------------mainProject----------- */
+
+.mainProject {
+    margin: 0 0 50px 0;
+}
+
+.mainProject .inner {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.mainProject .inner figure h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0 0 20px 0;
+}
+
+.mainProject .inner figure p {
+    position: absolute;
+    font-size: 20px;
+    line-height: 20px;
+    right: 200px;
+    text-align: right;
+}
+
+.mainProject .img_box {
+    margin: 0 0 20px 0;
+}
+
+.mainProject img {
+    width: 1000px;
+}
+
+
+.mainProject .tab_list {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.mainProject .tab_list ul {
+    line-height: 100px;
+    color: #c4c4c4;
+    font-size: 70px;
+    font-weight: 800;
+    text-align: right;
+    text-shadow: 0 3px 3px #202;
+}
+
+
+/* -------------lifeStyle----------- */
+
+.lifeStyle {
+    position: relative;
+}
+
+.lifeStyle img {
+    width: 100%;
+}
+
+.lifeStyle .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+}
+
+.lifeStyle .inner .text_box {
+    padding: 0 0 130px 0;
+    border-bottom: thick double #fff;
+    margin: 0 0 20px 0;
+}
+
+.lifeStyle .inner .text_box h2 {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 120px;
+    letter-spacing: 5px;
+}
+
+.lifeStyle .inner .text_box h2::before {
+    content: '“';
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+}
+
+.lifeStyle .inner .text_box h2::after {
+    content: '”';
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+}
+
+.lifeStyle .inner .text_box span {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+}
+
+.lifeStyle .inner p {
+    font-size: 20px;
+    line-height: 25px;
+
 }
