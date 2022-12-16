@@ -296,12 +296,12 @@
 }
 
 .mainContent .arrows .prev {
-    background: url(./img/left.png);
+    background: url(../img/left.png);
     margin: 0 0 0 430px;
 }
 
 .mainContent .arrows .next {
-    background: url(./img/right.png);
+    background: url(../img/right.png);
     margin: 0 0 0 530px;
 }
 
