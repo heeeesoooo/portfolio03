@@ -36,15 +36,17 @@ $(function () {
         cssEase: 'linear',
         arrows: false,
         //dots: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
+        // autoplay: true,
+        // autoplaySpeed: 4000,
     });
 
     $('.tab_list li').on('click', function (e) {
         e.preventDefault();
         var idx = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on');
         $('.main_pro_slide').slick('slickGoTo', idx)
     })
+
 
 
     $(window).on('scroll', function () {
@@ -55,6 +57,11 @@ $(function () {
             $('.header').removeClass('on');
         }
 
+    })
+
+    $('.tab_list li').on('click', function () {
+        var idx = $(this).index();
+        $('.main_pro_slide').slick('slickGoTo', idx)
     })
 
 })
